@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.*;
+import java.nio.file.Paths;
 
 class Lanternfish {
     int timer = -1;
@@ -25,7 +26,7 @@ public class Day6 {
     public static int part1() {
         try {
             /// creates a new file from input data which stores the puzzle input
-            File file = new File("C:\\Users\\TemTheShopkeeper\\Documents\\GitHub\\AventOfCode2021\\Data\\Day6.txt");
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day6.txt");
 
             /// creates a scanner object to read from the puzzle input
             Scanner input = new Scanner(file);
@@ -59,10 +60,45 @@ public class Day6 {
         return -1;
     }
 
-    public static int part2() {
-        
-        /// not finished
-        
+    public static long part2() {
+        try {
+            /// creates a new file from input data which stores the puzzle input
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day6.txt");
+
+            /// creates a scanner object to read from the puzzle input
+            Scanner input = new Scanner(file);
+
+            /// parse puzzle input into Lanternfish object list
+            long[] population = new long[9];
+            Arrays.fill(population, 0);
+            String str = input.nextLine();
+            input.close();
+            for(int i = 0; i < str.length(); i++) {
+                if(str.charAt(i) != ',') {
+                    population[Integer.parseInt(str.substring(i,i+1))] += 1;
+                }
+            }
+            /// loops through 80 days
+            int days = 0;
+            long spawn = 0;
+            while (days < 256) {
+                days++;
+                spawn = population[0];
+                for(int i = 0; i < population.length - 1; i++) {
+                    population[i] = population[i+1];
+                }
+                population[6] += spawn;
+                population[8] = spawn;
+            }
+            
+            long sum = 0;
+            for(int i = 0; i < 9; i++) {
+                sum += population[i];
+            }
+            return sum;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return -1;
     }
 

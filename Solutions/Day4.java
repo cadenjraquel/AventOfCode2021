@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.*;
+import java.nio.file.Paths;
 
 class Board {
     int[][] board = new int[5][5];
@@ -98,7 +99,7 @@ public class Day4 {
     public static int part1() {
         try {
             /// creates a new file from input data which stores the puzzle input
-            File file = new File("C:\\Users\\TemTheShopkeeper\\Documents\\GitHub\\AventOfCode2021\\Data\\Day4.txt");
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day4.txt");
 
             /// creates a scanner object to read from the puzzle input
             Scanner input = new Scanner(file);
@@ -164,7 +165,7 @@ public class Day4 {
     public static int part2() {
         try {
             /// creates a new file from input data which stores the puzzle input
-            File file = new File("C:\\Users\\TemTheShopkeeper\\Documents\\GitHub\\AventOfCode2021\\Data\\Day4.txt");
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day4.txt");
 
             /// creates a scanner object to read from the puzzle input
             Scanner input = new Scanner(file);

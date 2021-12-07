@@ -1,11 +1,12 @@
 import java.io.File;
 import java.util.*;
+import java.nio.file.Paths;
 
 public class Day3 {
 
     public static int part1() {
         try {
-            File file = new File("C:\\Users\\TemTheShopkeeper\\Documents\\GitHub\\AventOfCode2021\\Data\\Day3.txt");
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day3.txt");
 
             /// creates a scanner object to read from the puzzle input
             Scanner input = new Scanner(file);
@@ -51,7 +52,7 @@ public class Day3 {
 
     public static int part2() {
         try {
-            File file = new File("C:\\Users\\TemTheShopkeeper\\Documents\\GitHub\\AventOfCode2021\\Data\\Day3.txt");
+            File file = new File(Paths.get("").toAbsolutePath().toString() + "\\Data\\Day3.txt");
 
             /// creates a scanner object to read from the puzzle input
             Scanner input = new Scanner(file);
