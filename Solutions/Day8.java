@@ -9,7 +9,6 @@ class Segments {
         return new String(sorted);
     } 
     
-    /// fix abd removed from abcd
     public static String removeFrom(String a, String b) {
         String str = "";
         boolean add;

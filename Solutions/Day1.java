@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 
 public class Day1 {
     public static int part1() {
-        /// create variable to store count of increasing consecutive numebrs
+        /// create variable to store count of increasing consecutive numbers
         int count = 0;
         try {
             /// creates a new file from input data which stores the puzzle input
